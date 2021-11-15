@@ -8,19 +8,17 @@
     <link rel="shortcut icon" href="">
     <title>Tim's Tic Tac Toe</title>
 </head>
-<title>Tim's Tic Tac Toe app</title>
+
 <body class="mainContent">
 <h1 class="pageTitle">Tim's Tic Tac Toe</h1>
-
 <div class="container" id="gameBoardContainer"></div>
-
-<div class="container">
-    <label for="playerOneName">Player One Name (X): </label>
+<div class="gameControls">
+    <label for="playerOneName" id="playerOneLabel">Player One Name (X): </label>
     <input type="text" id="playerOneName">
-    <label for="playerTwoName">Player Two Name (O): </label>
+    <label for="playerTwoName" id="playerTwoLabel">Player Two Name (O): </label>
     <input type="text" id="playerTwoName">
-    <button id=submit>Submit</button>
-    <button id="resetBoard">Reset Board</button>
+    <button id=submitNamesButton>Submit Names</button>
+    <button id="resetBoardButton">Reset Board</button>
 </div>
 </body>
 <script src="main.js"></script>

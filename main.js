@@ -111,8 +111,8 @@ const gameSetup = (() => {
 
     let playerOneInput = document.getElementById("playerOneName");
     let playerTwoInput = document.getElementById("playerTwoName");
-    let submitButton = document.getElementById("submit");
-    let resetBoard = document.getElementById("resetBoard");
+    let submitButton = document.getElementById("submitNamesButton");
+    let resetBoard = document.getElementById("resetBoardButton");
 
 
     resetBoard.addEventListener("click", (() => {
