@@ -19,7 +19,7 @@ const gameBoardFlowModule = (() => {
     let gameBoard = {
         tiles: []
     };
-    for(i = 0; i < 9; i++) {
+    for (i = 0; i < 9; i++) {
         gameBoard.tiles[i] = {
             position: i,
             marker: `none${i}`
@@ -37,7 +37,7 @@ const gameBoardFlowModule = (() => {
             winnerModalContent.innerHTML = `${gameFlow.activePlayer.name} Wins!`
             gameBoardFlowModule.gameOver = true;
 
-            window.onclick = function(event) {
+            window.onclick = function (event) {
                 if (event.target == winnerModal || event.target == winnerModalContent) {
                     winnerModal.className = "Modal is-hidden";
                     gameOverBody.className = "mainContent";
@@ -153,7 +153,7 @@ const gameSetup = (() => {
         blurBody.className = "mainContent is-blurred"
         addedModalContent.innerHTML = "Players Added"
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == winnerModal || event.target == winnerModalContent) {
                 addedModal.className = "Modal is-hidden";
                 blurBody.className = "mainContent";
