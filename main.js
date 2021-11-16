@@ -29,8 +29,22 @@ const gameBoardFlowModule = (() => {
 
     let tileChecker = (tileOne, tileTwo, tileThree) => {
         if (gameBoard.tiles[tileOne].marker == gameBoard.tiles[tileTwo].marker && gameBoard.tiles[tileOne].marker == gameBoard.tiles[tileThree].marker) {
-            alert(`player ${gameFlow.activePlayer.name} has won!`)
+            const winnerModal = document.getElementById("winnerModal")
+            const winnerModalContent = document.getElementById("winnerModalContent")
+            const gameOverBody = document.getElementById("mainContent")
+            winnerModal.className = "Modal"
+            gameOverBody.className = "mainContent is-blurred"
+            winnerModalContent.innerHTML = `${gameFlow.activePlayer.name} Wins!`
             gameBoardFlowModule.gameOver = true;
+
+            window.onclick = function(event) {
+                if (event.target == winnerModal || event.target == winnerModalContent) {
+                    winnerModal.className = "Modal is-hidden";
+                    gameOverBody.className = "mainContent";
+                    container.className = "MainContainer";
+                    container.parentElement.className = "";
+                }
+            }
         }
     }
 
@@ -131,7 +145,23 @@ const gameSetup = (() => {
     submitButton.addEventListener("click", (() => {
         playerOne.name = playerOneInput.value;
         playerTwo.name = playerTwoInput.value;
-        alert("Player Names added")
+
+        const addedModal = document.getElementById("winnerModal")
+        const addedModalContent = document.getElementById("winnerModalContent")
+        const blurBody = document.getElementById("mainContent")
+        addedModal.className = "Modal"
+        blurBody.className = "mainContent is-blurred"
+        addedModalContent.innerHTML = "Players Added"
+
+        window.onclick = function(event) {
+            if (event.target == winnerModal || event.target == winnerModalContent) {
+                addedModal.className = "Modal is-hidden";
+                blurBody.className = "mainContent";
+                container.className = "MainContainer";
+                container.parentElement.className = "";
+            }
+        }
+
     }))
 
 })()
